@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link id="themeStyleSheet" rel='stylesheet' type='text/css' media='screen' href='css/hot.css'>
+    <title>BOMerang</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="areaHeaderMenu">
+            <section class="menuPrimario">
+                <ul class="navMenuPri">
+                    <li class="navMenuItem">Menu</li>
+                </ul>
+            </section>
+            <button id="alterarTema"><img class="iconsMenu" src="img/icons8-theme-50.png"></button>
+
+            <section class="menuSecundario">
+                <ul class="navMenuSec">
+                    <li class="navMenuItem"></li>
+                    <li class="navMenuItemSeta"></li>
+                    <li class="navMenuItem"></li>
+                    <li class="navMenuItemSeta"></li>          
+                </ul>
+            </section>
+        </div>
+       
+        <div class="bottomTitleHeader">
+            <h1>Quanto custa fabricar seu produto?</h1>
+        </div>
+    </header>
+    <hr>
+
+    <section class="containerGeral2">
+        <div class="dadosFormulario">
+            <h2>Cadastro do Produto</h2>
+            <input type="text" class="textAreacadastroProduto" id="idNomeProdutoPai" placeholder="Digite o nome do produto">
+            <button class="btnProdutoPai" id="idBtnProdutoPai" onclick="preencherProdutoPai()"> + </button>
+            <hr>
+            <section class="classeCadastroComponente">
+                <h2>Cadastro dos Componentes</h2>
+                <div class="formImput">
+                    <input type="text" id="idNomeComponente" placeholder="Nome do Componente">
+                    <input type="number" id="idQtdeNecessaria" class="textCadastroQtdeProduto" placeholder="Qtde Necessaria"> 
+                    <select id="selectUMComponente">
+                        <option value="un">Unidade</option>
+                        <option value="lts">Litro</option>
+                        <option value="mt">Metro</option>
+                        <option value="kg">Quilo</option>
+                    </select> 
+                    <input type="number" id="idPrecoComponente" class="textCadastroPrecoProduto" placeholder="Preço da Unid. Medida">
+                    <button class="btn" onclick="addComponente()"> + </button>
+                    <p id="resultadoSelecao"></p>
+                </div>
+            </section>
+            <hr>
+            <section class="classeFaseProducao">
+                <h2>Fase de Produção</h2>
+                <div class="formImput">
+                    <input type="text" id="idNomeEtapa" placeholder="Nome da Fase">
+                    <input type="number" id="idTempoCicloProdutivo" placeholder="Tempo do Ciclo(minutos)">
+                    <input type="number" id="idValorHora" placeholder="Valor Hora">
+                    <button class="btn" onclick="addEtapa()"> + </button>
+                </div>
+            </section>
+            <hr>
+            <section class="classeOutrasDespesas">
+                <h2>Outras Despesas</h2>
+                <div class="formImput">
+                    <input type="text" id="idNomeDespesa" placeholder="Descrição da Despesa">
+                    <input type="number" id="idValorDespesa" placeholder="Valor da Despesa">
+                    <input type="number" id="idPercentualRateioDespesa" placeholder="Percentual a Ratear">
+                    <button class="btn" onclick="addDespesa()"> + </button>
+                </div>
+            </section>
+
+        </div>
+        <div class="dadosFichaTecnica">
+            <h2 class="tituloProdutoPrincipal" id="tituloProdutoPrincipal"></h2>
+            <hr>
+            <div class="material-list" id="listaMateriais">
+                <div class="componenteDaLista">
+                    <table>
+                        <tr>
+                            <th>Componente</th>
+                            <th>Qtde</th>
+                            <th>Preço</th>
+                            <th>Custo Proporção</th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <hr>
+            <div class="material-list" id="faseProducao">
+                <div class="etapasDeProducao">
+                    <table>
+                        <tr>
+                            <th>Fase</th>
+                            <th>Tempo do ciclo</th>
+                            <th>Valor da hora</th>
+                            <th>Custo da fase</th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <hr>
+            <div class="material-list" id="outrasDespesas">
+                <div class="despesasAdministrativas">
+                    <table>
+                        <tr>
+                            <th>Despesa</th>
+                            <th>Valor da Despesa</th>
+                            <th>Custo da Despesa</th>
+                            <th>Custo Rateado</th>
+                        </tr>
+                    </table>
+                </div>
+
+            </div>
+            <hr>
+            <div class="resultado" id="resultado">
+                <h3 class="resultadoDoCustoFinal">
+                    Custo Total: R$ 0,00
+                </h3>
+                <button class="btnExport" onclick="ExportarExcel()"> Exportar Excel </button>
+            </div>
+
+        </div>
+    </section>  
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>
