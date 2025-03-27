@@ -90,10 +90,18 @@
                     <td>${qtdeComponente.toFixed(3)} ${selectUMComponente}</td>
                     <td>R$ ${custoComponente.toFixed(2)}</td>
                     <td>R$ ${valorProporcao.toFixed(2)}</td>
+                    <td><button class="botaoExcluirLinha"> X </td>
                 `;
         
                 // Adiciona a linha à tabela
                 tabelaComponente.appendChild(novaLinha);
+
+                novaLinha.querySelector(".botaoExcluirLinha").addEventListener("click", function excluirLinha(){
+                    novaLinha.remove();
+
+                CustoTotal -= valorProporcao;
+                document.getElementById("resultado").textContent = `Custo Total: R$ ${CustoTotal.toFixed(2)}`;
+                });
         
                 // Atualiza o custo total
                 CustoTotal += valorProporcao;
@@ -131,8 +139,18 @@
                     <td>${tempoEtapaEmMinutos}min</td>
                     <td>R$ ${custoEtapa.toFixed(2)}</td>
                     <td>R$ ${valorProporcao.toFixed(2)}</td>
+                    <td><button class="botaoExcluirLinha"> X </td>
                 `;
+
                 tabelaFaseProducao.appendChild(novaLinha);
+
+                novaLinha.querySelector(".botaoExcluirLinha").addEventListener("click", function excluirLinha(){
+                    novaLinha.remove();
+
+                CustoTotal -= valorProporcao;
+                document.getElementById("resultado").textContent = `Custo Total: R$ ${CustoTotal.toFixed(2)}`;
+                    
+                });
 
                 CustoTotal += valorProporcao;
                 document.getElementById("resultado").textContent = `Custo Total: R$ ${CustoTotal.toFixed(2)}`;
@@ -164,10 +182,19 @@
                 <td>${nomeDespesa}</td>
                 <td>R$ ${valorDespesa.toFixed(2)}</td>
                 <td>${percentualRateioDespesa.toFixed(2)}%</td>
-                <td>R$ ${valorProporcao.toFixed(2)}</td>`;
+                <td>R$ ${valorProporcao.toFixed(2)}</td>
+                <td><button class="botaoExcluirLinha"> X </td>
+                `;
                 
                 tabelaDespesa.appendChild(novaLinha);
                 
+                novaLinha.querySelector(".botaoExcluirLinha").addEventListener("click", function excluirLinha(){
+                    novaLinha.remove();
+
+                CustoTotal -= valorProporcao;
+                document.getElementById("resultado").textContent = `Custo Total: R$ ${CustoTotal.toFixed(2)}`;
+            });
+            
                 CustoTotal += valorProporcao;
                 document.getElementById("resultado").textContent = `Custo Total: R$ ${CustoTotal.toFixed(2)}`;
                 
