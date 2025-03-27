@@ -41,7 +41,7 @@
             <button class="btnProdutoPai" id="idBtnProdutoPai" onclick="preencherProdutoPai()"> + </button>
             <hr>
             <section class="classeCadastroComponente">
-                <h2>Cadastro dos Componentes</h2>
+                <h2>Informe sua lista de materiais</h2>
                 <div class="formImput">
                     <input type="text" id="idNomeComponente" placeholder="Nome do Componente">
                     <input type="number" id="idQtdeNecessaria" class="textCadastroQtdeProduto" placeholder="Qtde Necessaria"> 
@@ -51,24 +51,24 @@
                         <option value="mt">Metro</option>
                         <option value="kg">Quilo</option>
                     </select> 
-                    <input type="number" id="idPrecoComponente" class="textCadastroPrecoProduto" placeholder="Preço da Unid. Medida">
+                    <input type="number" id="idPrecoComponente" class="textCadastroPrecoProduto" placeholder="Preço de Compra">
                     <button class="btn" onclick="addComponente()"> + </button>
                     <p id="resultadoSelecao"></p>
                 </div>
             </section>
             <hr>
             <section class="classeFaseProducao">
-                <h2>Fase de Produção</h2>
+                <h2>Operação do Roteiro</h2>
                 <div class="formImput">
-                    <input type="text" id="idNomeEtapa" placeholder="Nome da Fase">
-                    <input type="number" id="idTempoCicloProdutivo" placeholder="Tempo do Ciclo(minutos)">
-                    <input type="number" id="idValorHora" placeholder="Valor Hora">
+                    <input type="text" id="idNomeEtapa" placeholder="Nome da Operação">
+                    <input type="number" id="idTempoCicloProdutivo" placeholder="Tempo de operação (minutos)">
+                    <input type="number" id="idValorHora" placeholder="Custo Hora">
                     <button class="btn" onclick="addEtapa()"> + </button>
                 </div>
             </section>
             <hr>
             <section class="classeOutrasDespesas">
-                <h2>Outras Despesas</h2>
+                <h2>Despesas Administrativas e Comerciais</h2>
                 <div class="formImput">
                     <input type="text" id="idNomeDespesa" placeholder="Descrição da Despesa">
                     <input type="number" id="idValorDespesa" placeholder="Valor da Despesa">
@@ -87,8 +87,8 @@
                         <tr>
                             <th>Componente</th>
                             <th>Qtde</th>
-                            <th>Preço</th>
-                            <th>Custo Proporção</th>
+                            <th>Preço Unitário</th>
+                            <th>Custo Total</th>
                         </tr>
                     </table>
                 </div>
@@ -98,10 +98,10 @@
                 <div class="etapasDeProducao">
                     <table>
                         <tr>
-                            <th>Fase</th>
-                            <th>Tempo do ciclo</th>
-                            <th>Valor da hora</th>
-                            <th>Custo da fase</th>
+                            <th>Nome da Operação</th>
+                            <th>Tempo de Operação</th>
+                            <th>Custo hora</th>
+                            <th>Custo Total da Operação</th>
                         </tr>
                     </table>
                 </div>
